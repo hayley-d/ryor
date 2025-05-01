@@ -4,7 +4,7 @@ A minimal rust OS
 ### How to Compile
 ```bash
 # Linux
-cargo rustc -- -C link-arg=-nostartfiles
+cargo +nightly build --target target.json
 # Windows
 cargo rustc -- -C link-args="/ENTRY:_start /SUBSYSTEM:console"
 # macOS
