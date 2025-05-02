@@ -253,6 +253,7 @@ name = "ryor"
 version = "0.1.0"
 dependencies = [
  "bootloader",
+ "volatile",
 ]
 
 [[package]]
@@ -366,6 +367,12 @@ checksum = "458f7a779bf54acc9f347480ac654f68407d3aab21269a6e3c9f922acd9e2da9"
 dependencies = [
  "getrandom",
 ]
+
+[[package]]
+name = "volatile"
+version = "0.6.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "af8ca9a5d4debca0633e697c88269395493cebf2e10db21ca2dbde37c1356452"
 
 [[package]]
 name = "wasi"
