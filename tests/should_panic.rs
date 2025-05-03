@@ -3,9 +3,9 @@
 #![feature(custom_test_frameworks)]
 #![test_runner(test_runner)]
 #![reexport_test_harness_main = "test_main"]
-
-use blog_os::{exit_qemu, serial_println, QemuExitCode};
 use core::panic::PanicInfo;
+use ryor::serial_print;
+use ryor::{exit_qemu, serial_println, QemuExitCode};
 
 #[unsafe(no_mangle)]
 pub extern "C" fn _start() -> ! {
@@ -29,4 +29,10 @@ fn panic(_info: &PanicInfo) -> ! {
     serial_println!("[ok]");
     exit_qemu(QemuExitCode::Success);
     loop {}
+}
+
+#[test_case]
+fn should_fail() {
+    serial_print!("should_panic::should_fail...\t");
+    assert_eq!(0, 1);
 }
