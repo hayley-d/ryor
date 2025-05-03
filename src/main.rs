@@ -66,12 +66,12 @@ pub fn exit_qemu(exit_code: QemuExitCode) {
 }
 
 #[cfg(test)]
-pub fn test_runner(tests: &[&dyn Fn()]) {
-    println!("Running {} tests", tests.len());
+pub fn test_runner(tests: &[&dyn Testable]) {
     serial_println!("Running {} tests", tests.len());
     for test in tests {
-        test();
+        test.run(); // new
     }
+    exit_qemu(QemuExitCode::Success);
 }
 
 #[test_case]
