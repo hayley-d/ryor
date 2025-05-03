@@ -3,6 +3,7 @@
 #![feature(custom_test_frameworks)]
 #![test_runner(crate::test_runner)]
 
+mod serial;
 mod vga_buffer;
 use core::panic::PanicInfo;
 
