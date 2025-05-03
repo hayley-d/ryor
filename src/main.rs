@@ -10,10 +10,11 @@ use core::panic::PanicInfo;
 pub extern "C" fn _start() -> ! {
     println!("Hello World{}", "!");
 
-    #[cfg(test)]
-    test_main();
+    for test in tests {
+        test();
+    }
 
-    loop {}
+    exit_qemu(QemuExitCode::Success);
 }
 
 #[panic_handler]
