@@ -76,14 +76,10 @@ pub fn test_runner(tests: &[&dyn Testable]) {
 
 #[test_case]
 fn trivial_assertion() {
-    print!("trivial assertion... ");
     assert_eq!(1, 1);
-    println!("[ok]");
 }
 
 #[test_case]
 fn trivial_assertion_serial() {
-    serial_print!("trivial assertion... ");
     assert_eq!(1, 1);
-    serial_println!("[ok]");
 }
