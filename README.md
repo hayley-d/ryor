@@ -1,5 +1,5 @@
 # ryor
-A minimal rust OS
+A minimal monolithic rust OS
 
 ### How to Compile
 ```bash
